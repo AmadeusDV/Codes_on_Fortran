@@ -5,6 +5,7 @@ PROGRAM RadiusMeanSquare
 
         REAL Rmq, rKpp, rK, rC, rB
         REAL V_0, E_0, hc, M, m_p, m_n
+        REAL cTE
 
         !Vamos declarar os valores das variáveis a serem utilizadas
     
@@ -15,6 +16,7 @@ PROGRAM RadiusMeanSquare
         E_0 = 2.225     ! Energia de ligação E_0 = 2,225 Mev
         rC = 0.4        ! rC = 0,8 fm, raio do próton
         rB = 1.89       ! rB = 
+        cTE = 1
 
         !Precisaremos também das expressões da massa reduzida (M), de rKpp e rK
 
@@ -22,17 +24,17 @@ PROGRAM RadiusMeanSquare
 
         PRINT *, M
 
-        rK = 1/hc * ((2*M*(V_0 - E_0))**(1/2))
+        rK = 1/hc * ((2*M*(V_0 - E_0))**(cTE/2))
 
         PRINT *, rK
 
-        rKpp = (1/hc) * ((2*M*E_0)**(1/2))
+        rKpp = (1/hc) * ((2*M*E_0)**(cTE/2))
 
         PRINT *, rKpp
 
         !Vamos agora montar a equação a ser calculada, o resultado tem que ser Rmq = 0.8fm
 
-        Rmq = (1/8) * ( (1/rKpp**2) - (1/rK) + 2*(rC**2) + ((2*rC+rB)*(1+rKpp*rB))/rKpp - ((rB**3)*rKpp)/(3*(1+rB)))
+        Rmq = (cTE/8) * ( (1/rKpp**2) - (1/rK) + 2*(rC**2) + ((2*rC+rB)*(1+rKpp*rB))/rKpp - ((rB**3)*rKpp)/(3*(1+rB)))
 
         PRINT *, Rmq 
      
