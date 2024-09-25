@@ -16,16 +16,25 @@ PROGRAM RadiusMeanSquare
         rC = 0.4        ! rC = 0,8 fm, raio do próton
         rB = 1.89       ! rB = 
 
-        !Precisaremos também das expressões da massa reduzida (M), de rKpp e rK,
+        !Precisaremos também das expressões da massa reduzida (M), de rKpp e rK
 
-        M = (m_p*m_n)/(m_n+m_p)
+        M = (m_p * m_n)/(m_n + m_p)
+
+        PRINT *, M
 
         rK = 1/hc * ((2*M*(V_0 - E_0))**(1/2))
 
-        rKpp = 1/hc * ((2*M*E_0)**(1/2))
+        PRINT *, rK
+
+        rKpp = (1/hc) * ((2*M*E_0)**(1/2))
+
+        PRINT *, rKpp
 
         !Vamos agora montar a equação a ser calculada, o resultado tem que ser Rmq = 0.8fm
 
         Rmq = (1/8) * ( (1/rKpp**2) - (1/rK) + 2*(rC**2) + ((2*rC+rB)*(1+rKpp*rB))/rKpp - ((rB**3)*rKpp)/(3*(1+rB)))
+
+        PRINT *, Rmq 
      
 END
+
