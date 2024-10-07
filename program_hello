@@ -1,5 +1,0 @@
-program hello
-    ! Here is the comment line, nothing will run
-    print *, 'Hello World!'
-end program hello
-    ! So, thats the basic structure of a fortran program
