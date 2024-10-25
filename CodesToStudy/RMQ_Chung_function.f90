@@ -55,4 +55,9 @@ PROGRAM FunctionRadiusMeanSquare
 
        END DO
 
+!Agora com este programa funcionando, queremos que todos os valores
+!sejam escritos em um arquivo/aba diferente para que os dados
+!estejam separados do programa e que seja possível plotar os dados em
+!um gráfico
+
       END PROGRAM
