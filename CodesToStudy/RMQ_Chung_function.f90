@@ -53,11 +53,12 @@ PROGRAM FunctionRadiusMeanSquare
 
          rB = rB + 0.01
 
-       END DO
+       WRITE(18,*) SQRT(Rmq)
 
-!Agora com este programa funcionando, queremos que todos os valores
-!sejam escritos em um arquivo/aba diferente para que os dados
-!estejam separados do programa e que seja possível plotar os dados em
-!um gráfico
+!Com a função acima podemos agora ter todos os valores obtidos
+!pelo programa em uma aba diferente, a qual poderá ser usada
+!para ser coletada e construírmos um gráfico.
 
-      END PROGRAM
+     END DO
+
+END PROGRAM
