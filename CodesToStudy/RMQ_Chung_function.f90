@@ -1,4 +1,4 @@
-PROGRAM FunctionRadiusMeanSquare
+      PROGRAM FunctionRadiusMeanSquare
       IMPLICIT NONE
 
 !Vamos explicitar aqui todas as variáveis que serão utilizadas
@@ -41,24 +41,24 @@ PROGRAM FunctionRadiusMeanSquare
 
       PRINT *, 'rB =', rB
 
-      DO WHILE (rB .LE. 2.0) !Aqui temos um laço que vai rodar
-! uma certa equação, 
+      DO WHILE (rB.LE.2.0) !Aqui temos um laço que vai rodar
+! uma certa equação,
 !com rB como parâmetro, até que chegue no valor máximoestipulado.
         Rmq=(1.0/8.0)*((1.0/rKpp**2.0)-(1.0/rK)+
      &2.0*(rC**2.0)+((2.0*rC+rB)*(1.0+rKpp*rB))/rKpp-
      &((rB**3.0)*rKpp)/(3.0*(1.0+rB)))
 
-       PRINT *, 'Rmq =', Rmq
+       PRINT *,'Rmq =', Rmq
        PRINT *, 'Raiz de Rmq =', SQRT(Rmq)         
 
          rB = rB + 0.01
 
-       WRITE(18,*) SQRT(Rmq)
+       WRITE(18,*) rb,SQRT(Rmq)
 
 !Com a função acima podemos agora ter todos os valores obtidos
 !pelo programa em uma aba diferente, a qual poderá ser usada
 !para ser coletada e construírmos um gráfico.
 
-     END DO
+      END DO
 
-END PROGRAM
+      END
